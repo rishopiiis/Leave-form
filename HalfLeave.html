@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HalfDay Leave Form</title>
+    <link rel="stylesheet" href="Leave.css">
+</head>
+
+<style>
+    .label-inline  {
+    display: block;
+}
+
+
+   @media (min-width: 1024px)and (max-width:1200px) {
+   .label-inline {
+       display: inline-block;
+       margin-right: 60px;
+    }
+}
+</style>
+<body  >
+    <div class="container">
+     <h2><u>Short Leave Application Form</u></h2>
+        <form id="leaveForm" action="/upload" method="post" enctype="multipart/form-data">
+
+            <label for="file">Select Resume to upload:</label>
+            <input type="file" id="file" name="file">
+
+            <div class="form-group">
+                <label for="name"  >Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group label-inline">
+                <label for="EmpID" >EmpID:</label>
+                <input type="text" id="EmpID" name="EmpID" required>
+            </div>
+            <div class="form-group label-inline">
+                <label for="Dept">Department:</label>
+                <input id="Dept" name="Dept"  required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+      <!--      <div class="form-group label-inline">
+                <label>Time duration:</label>
+                <input type="radio" id="leave" name="radio" value="leave">
+                <lable for="leave " >Day</lable>
+
+
+                <input type="radio" id="leave1" name="leave1" value="leave1">
+                <lable for="leave1"  >Hours</lable>
+            </div>
+-->
+            <div class="form-group">
+                <label for="leaveType" >Type of Leave:</label>
+                <select id="leaveType" name="leaveType" required>
+                   <!-- <option value="annual">Annual Leave</option>-->
+                    <option value="sick" >Sick Leave</option>
+                    <option value="casual">Casual Leave</option>
+                    <option value="official" selected>Official Leave</option>
+                   <!-- <option value="maternity">Maternity Leave</option>-->
+                </select>
+            </div>
+<!--
+            date declaration
+            <div class="form-group label-inline">
+                <label for="startDate" >Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </div>
+            <div class="form-group label-inline">
+                <label for="endDate"  >End Date:</label>
+                <input type="date" id="endDate" name="endDate" required>
+            </div>
+-->
+            <div class="form-group">
+                <label for="time">Time Duration:</label>
+                <input id="time" name="time"  required>
+            </div>
+
+            <div class="form-group">
+                <label for="Acting">Acting:</label>
+                <input id="Acting" name="Acting"  required>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason:</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+            </div>
+
+<a id="hiddenLink" href="/path/to/file.pdf" download="new_filename.pdf" style="display:none;"></a>
+<button onclick="triggerDownload()">Download File</button>
+
+<script>
+function triggerDownload() {
+  document.getElementById("hiddenLink").click();
+}
+</script>
+
+
+
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="Leave.js"></script>
+</body>
+</html>
